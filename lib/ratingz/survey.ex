@@ -8,6 +8,12 @@ defmodule Ratingz.Survey do
 
   alias Ratingz.Survey.Demographic
 
+  def get_demographics_for_user(user) do
+    Demographic
+    |> Demographic.Query.for_user(user)
+    |> Repo.one()
+  end
+
   @doc """
   Returns the list of demographics.
 

@@ -12,9 +12,6 @@ defmodule Ratingz.Survey.Demographic do
 
   @doc false
   def changeset(demographic, attrs) do
-    IO.inspect(demographic)
-    IO.inspect(attrs)
-
     demographic
     |> cast(attrs, [:gender, :year_of_birth, :user_id])
     |> validate_required([:gender, :year_of_birth, :user_id])
