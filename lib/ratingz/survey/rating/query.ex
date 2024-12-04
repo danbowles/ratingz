@@ -1,4 +1,5 @@
 defmodule Ratingz.Survey.Rating.Query do
+  alias Ratingz.Repo
   import Ecto.Query
   alias Ratingz.Survey.Rating
 
@@ -9,6 +10,8 @@ defmodule Ratingz.Survey.Rating.Query do
   end
 
   defp for_user(query, user) do
+    IO.inspect(query |> where([r], r.user_id == ^user.id) |> Repo.all())
+
     query
     |> where([r], r.user_id == ^user.id)
   end
