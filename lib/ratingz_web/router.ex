@@ -75,6 +75,8 @@ defmodule RatingzWeb.Router do
 
       live "/products/:id", ProductLive.Show, :show
       live "/products/:id/show/edit", ProductLive.Show, :edit
+
+      live "/survey", SurveyLive, :index
     end
   end
 
