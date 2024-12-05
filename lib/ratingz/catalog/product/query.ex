@@ -11,8 +11,6 @@ defmodule Ratingz.Catalog.Product.Query do
 
   def preload_user_ratings(query, user) do
     ratings_query = Rating.Query.preload_user(user)
-
     query |> preload(ratings: ^ratings_query)
-    # query
   end
 end
